@@ -1,0 +1,104 @@
+<apex:page standardController="Retail_Quote__c" extensions="CreateContractFromQuoteController">
+    <script>
+        var childWin=null;
+        function searchRateCodePopup(rcId,rchId){
+            var value1 = '{!recQuote.Opportunity__r.Service_Territory__c}';
+            var value2 = '{!recQuote.Quote_Price_KWH__c}';          
+            var url="/apex/SelectRateCodeForContract?serviceTeritory=" + value1 + "&quotePrice=" + value2 + "&rcId=" + rcId + "&rchId=" + rchId;
+            childWin=window.open(url, 'Popup','height=500,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+            if (window.focus){
+                childWin.focus();
+            }               
+            return false;
+        }
+                      
+        function closeLookupPopup(){
+           if (null!=childWin){
+              childWin.close();
+           }  
+        }
+    </script>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Exit" action="{!exitRequest}"/>
+                <apex:commandButton value="Finish" action="{!finishRequest}"/>                
+            </apex:pageBlockButtons>  
+            <apex:pageBlockSection title="Contract Information" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Contract Name" for="idContractName"/>                
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                       <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                       <apex:inputText label="Contract Name" value="{!contractName}" id="idContractName"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >                
+                    <apex:outputLabel value="Contract Counter Signed Date" for="idContractCounterSignedDate"/>                
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                       <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                       <apex:inputField label="Contract Counter Signed Date" value="{!quoteContract.Contract_Counter_Signed_Date__c}" id="idContractCounterSignedDate"/>
+                	</apex:outputPanel>                    
+                </apex:pageBlockSectionItem>
+                <!--
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Contract Type" for="idContractType"/>                
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                       <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                       <apex:inputField label="Contract Type" value="{!quoteContract.Contract_Type__c}" id="idContractType"/>
+                    </apex:outputPanel>   
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputField label="Contract Type" value="{!quoteContract.Contract_Type__c}" id="idQuotePrice1"/>
+                -->
+                <apex:outputField label="Quote Price" value="{!recQuote.Quote_Price__c}" id="idQuotePrice"/>
+                <apex:outputField label="Quote Price (kwh)" value="{!recQuote.Quote_Price_KWH__c}" id="idQuotePricekwh"/>
+                <apex:outputField label="Service Teritory" value="{!recQuote.Opportunity__r.Service_Territory__c}" id="idServiceTeritory"/>
+                <apex:outputField label="Product" value="{!recQuote.Product__r.Name}"/>
+                <apex:outputField label="Start Term" value="{!recQuote.Start_Term__c}"/>
+                <apex:outputField label="Term" value="{!recQuote.Term__c}"/>
+                
+                <apex:outputField label="End Term" value="{!recQuote.End_Term__c}"/> 
+                <!--
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Contract Counter Signed Date" for="idContractCounterSignedDate"/>                
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                       <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                       <apex:inputField label="Contract Counter Signed Date" value="{!quoteContract.Contract_Counter_Signed_Date__c}" id="idContractCounterSignedDate"/>
+                	</apex:outputPanel>   
+                </apex:pageBlockSectionItem>
+-->
+	
+	
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Bill Method" for="idBillMethod"/>                
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                       <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                       <apex:inputField label="Bill Method" value="{!quoteContract.Bill_Method__c}" id="idBillMethod"/>
+                    </apex:outputPanel>   
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel value="Rate Code"></apex:outputLabel>
+                    <apex:outputPanel >      
+                        <apex:inputHidden value="{!rateCode}" id="idRateCodeHid"/>        
+                        <apex:inputText label="Rate Code" value="{!rateCode}" disabled="true" id="idRateCode"/>
+                        <a href="#" onclick="searchRateCodePopup('{!$Component.idRateCode}','{!$Component.idRateCodeHid}'); return false">Search Rate Code</a> 
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:outputText label="" value=""/>
+            </apex:pageBlockSection>    
+            <apex:pageblockSection columns="2">    
+                <apex:facet name="header">
+                  <apex:pageBlockSectionItem >
+                    <apex:outputText value="Billing Address:" style="float:left;"></apex:outputText>
+                  </apex:pageBlockSectionItem>
+                </apex:facet>
+                <apex:outputField label="Street" value="{!recQuote.Opportunity__r.Account.BillingStreet}"/>
+                <apex:outputField label="City" value="{!recQuote.Opportunity__r.Account.BillingCity}"/>
+                <apex:outputField label="State" value="{!recQuote.Opportunity__r.Account.BillingState}"/>
+                <apex:outputField label="Country" value="{!recQuote.Opportunity__r.Account.BillingCountry}"/>
+                <apex:outputField label="Postal Code" value="{!recQuote.Opportunity__r.Account.BillingPostalCode}"/>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page standardController="OFSServer__ReleaseEnvironment__c" extensions="OFSServer.ReleaseEnvironment" tabStyle="OFSServer__ReleaseEnvironment__c"  showChat="true"   id="rEPage">
+    <apex:form id="dpForm">
+        <div class="bPageTitle">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="/s.gif" alt="Releases" class="pageTitleIcon" title="Releases"/>
+                    <h1 class="pageType">Release Environment<span class="titleSeparatingColon">:</span></h1>
+                    <h2 class="pageDescription"> New Release Environment</h2>
+                    <div class="blank">&nbsp;</div>
+                </div>
+                <div class="links"></div>
+            </div>
+            <div class="ptBreadcrumb"></div>
+        </div>
+        <apex:pageBlock id="pb1" title="ReleaseEnvironment Edit" mode="maindetail"> 
+            <apex:pageBlockButtons id="pbbInforemove" >
+                <apex:commandButton id="btnEditButton" value="Save"  action="{!saveRelease}" />
+                <apex:commandButton id="btnDeleteButton" value="Cancel"  action="{!cancelRelease}" /> 
+            </apex:pageBlockButtons>                       
+            <apex:pageBlockSection title="Information" columns="2" collapsible="false" showHeader="true" >
+                
+                <apex:inputField value="{!objReleaseEnv.OFSServer__Environment__c}"/>
+                <apex:inputField value="{!objReleaseEnv.OFSServer__Releases__c}"/>
+                <apex:inputField value="{!objReleaseEnv.OFSServer__Repository__c}"/>  
+                <apex:inputField value="{!objReleaseEnv.OFSServer__Continuous_Integration_Enabled__c}"/>                
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

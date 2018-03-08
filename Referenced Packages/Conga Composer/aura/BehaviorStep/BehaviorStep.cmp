@@ -1,0 +1,112 @@
+<aura:component extends="APXTConga4:BaseStep">
+	<aura:attribute name="showCC" type="Boolean" default="false" />
+<div class="slds-m-around--large">
+	<div class="slds-border--bottom slds-m-bottom--small slds-p-bottom--small">
+		<span class="slds-text-heading--large">Behavior Settings</span>
+	</div>
+	<div class="slds-m-bottom--small slds-p-bottom--small">
+		<span class="slds-text-heading--medium">Click on the link in the sidebar to set up your behavior settings for your solution.</span>
+	</div>
+<br />
+	<div class="slds-grid slds-wrap slds-grid--pull-padded">
+  
+  <div class="slds-size--1-of-2 slds-medium-size--2-of-6 slds-large-size--3-of-12">
+  	
+
+	<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+	  <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+        <lightning:icon iconName="utility:search" size="x-small" class="slds-input__icon slds-icon-text-default"/>
+        <input type="text" id="text-input-01" class="slds-input" placeholder="Search" />
+      </div>
+      <br />
+	  <h2 class="slds-text-title--caps slds-p-around--medium" id="folder-header">Generated File Settings</h2>
+	    
+	  <h2 class="slds-text-title--caps slds-p-around--medium" id="folder-header">Post Merge Distribution</h2>
+	  <ul>
+	    <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="folder-header"><lightning:icon iconName="utility:email" size="small" />&nbsp;&nbsp;Email</a></li>
+	    <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="folder-header"><lightning:icon iconName="utility:copy" size="small" />&nbsp;&nbsp;Save a Copy</a></li>
+	    <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="folder-header"><lightning:icon iconName="utility:note" size="small" />&nbsp;&nbsp;Activity Logging</a></li>
+	  </ul>
+	  <h2 class="slds-text-title--caps slds-p-around--medium" id="folder-header">eSignature</h2>
+	  <ul>
+	    <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="folder-header"><img src="{!$Resource.APXTConga4__docusign}"/>&nbsp;Docusign</a></li>
+	    <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="folder-header"><img src="{!$Resource.APXTConga4__adobeesign}"/>&nbsp;Adobe eSign</a></li>
+	    <li><a href="javascript:void(0);" class="slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="folder-header"><img src="{!$Resource.APXTConga4__sertifi}"/>&nbsp;Sertifi</a></li>
+	  </ul>
+	</div>
+
+  </div>
+  
+  <div class="slds-align--absolute-center slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--1-of-6 slds-large-size--1-of-12">
+  	
+  </div>
+  <div class="slds-p-horizontal--small slds-size--1-of-2 slds-medium-size--3-of-6 slds-large-size--8-of-12">
+  	<div class="slds-border--bottom slds-m-bottom--small slds-p-bottom--small">
+		<span class="slds-text-heading--large">Email Settings</span>
+
+	</div>
+
+	<br />
+		<fieldset class="slds-form--compound">
+  <!-- <legend class="slds-form-element__label slds-text-title-/-caps">Location</legend> -->
+  <div class="slds-form-element__group">
+    <div class="slds-form-element__row">
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="input-01"><b>To:</b></label>
+        <input type="text" id="input-01" class="slds-input" />
+      </div>
+      <div class="slds-form-element slds-size--1-of-2">
+        
+      </div>
+    </div>
+  </div>
+</fieldset>
+<br />
+<b>Additional Recipients?</b>
+<br />
+
+<fieldset class="slds-form-element">
+  
+  <div class="slds-form-element__control slds-float--left slds-m-right--medium">
+    <input type="radio" id="radio-29" name="options" checked="" onclick="{!c.toggleOn}" />
+    <!-- <span class="slds-radio">
+      <input type="radio" id="radio-29" name="options" checked="" onclick="{!c.toggleOn}" />
+      <label class="slds-radio__label" for="radio-29">
+        <span class="slds-radio-/-faux"></span>
+        <span class="slds-form-element__label">Yes</span>
+      </label>
+    </span> -->
+</div>
+<div class="slds-form-element__control slds-float--left">
+  <input type="radio" id="radio-30" name="options" checked="" onclick="{!c.toggleOff}" />
+    <!-- <span class="slds-radio">
+      <input type="radio" id="radio-30" name="options" checked="" onclick="{!c.toggleOff}" />
+      <label class="slds-radio__label" for="radio-30">
+        <span class="slds-radio-/-faux"></span>
+        <span class="slds-form-element__label">No</span>
+      </label>
+    </span> -->
+  </div>
+</fieldset>
+<br />
+
+<fieldset class="{!(v.showCC ? '' : 'slds-hidden ') + 'slds-form--compound'}">
+  <!-- <legend class="slds-form-element__label slds-text-title-/-caps">Location</legend> -->
+  <div class="slds-form-element__group">
+    <div class="slds-form-element__row">
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="input-01"><b>CC:</b></label>
+        <input type="text" id="input-01" class="slds-input"  />
+      </div>
+      <div class="slds-form-element slds-size--1-of-2">
+        <label class="slds-form-element__label" for="input-01"><b>BCC:</b></label>
+        <input type="text" id="input-01" class="slds-input" />
+      </div>
+    </div>
+  </div>
+</fieldset>
+  </div>
+</div>
+</div>
+<APXTConga4:StepFooter acceptButton="Next" declineButton="Back"/>
+</aura:component>

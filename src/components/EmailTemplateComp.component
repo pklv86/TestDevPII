@@ -1,0 +1,19 @@
+<apex:component controller="EmailComponentClass" access="global"><!--Dynagy_Quotes-->
+    <apex:attribute name="OppId" type="Id" description="Id of the Opportunity" assignTo="{!opptyId}"/>
+    <table border = "0">
+    <tr> 
+        <th>Action</th>
+        <th>Quote Number</th>
+        <th>Notional Value</th>
+    </tr>
+    <apex:repeat value="{!retailQuotes}" var="cx">
+              <tr>
+                <td><a href="https://dynegy.my.salesforce.com/{!cx.id}">View</a></td>
+                <td>{!cx.Name}</td>              
+                <td><apex:outputText value="${0, number,###,###,###,##0}">
+                      <apex:param value="{!cx.Notional_Value__c}" />
+                      </apex:outputText></td>
+              </tr>
+            </apex:repeat>
+        </table>                 
+</apex:component>

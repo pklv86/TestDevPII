@@ -1,0 +1,28 @@
+<apex:page standardController="OFSServer__ReleasePackage__c" extensions="OFSServer.ReleasePackage" tabStyle="OFSServer__ReleasePackage__c"  showChat="true"   id="rEPage">
+    <apex:form id="dpForm">
+        <div class="bPageTitle">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="/s.gif" alt="Package" class="pageTitleIcon" title="Package"/>
+                    <h1 class="pageType">Package<span class="titleSeparatingColon">:</span></h1>
+                    <h2 class="pageDescription"> New Package</h2>
+                    <div class="blank">&nbsp;</div>
+                </div>
+                <div class="links"></div>
+            </div>
+            <div class="ptBreadcrumb"></div>
+        </div>
+        <apex:pageBlock id="pb1" title="Package Edit" mode="maindetail"> 
+            <apex:pageBlockButtons id="pbbInforemove" >
+                <apex:commandButton id="btnEditButton" value="Save"  action="{!saveRelease}" />
+                <apex:commandButton id="btnDeleteButton" value="Cancel"  action="{!cancelRelease}" /> 
+            </apex:pageBlockButtons>                       
+            <apex:pageBlockSection title="Information" columns="1" collapsible="false" showHeader="true" >
+                
+                <apex:inputField value="{!objPackage.Name}"/>               
+                <apex:inputField value="{!objPackage.OFSServer__Description__c}"/>
+              
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

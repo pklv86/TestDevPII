@@ -1,0 +1,17 @@
+<apex:page extensions="OFSServer.Auth" standardController="OFSServer__Enviroment__c" action="{!validateOAuthGITHub}">
+    <apex:form >
+        <apex:outputPanel >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:commandButton action="{!returnPageURL}" value="Back" style="align:center"/>
+        </apex:outputPanel>      
+        
+        <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Auth_Type__c}" rendered="false"/>
+        <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Authorize_Self__c}" rendered="false"/>
+        <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Type__c}" rendered="false" />
+        <!--
+        <apex:outputLabel >Please select environment type</apex:outputLabel>
+        <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Type__c}"/>
+        <apex:commandButton value="OAuth" action="{!validateOAuthBase}"></apex:commandButton>
+        -->
+    </apex:form>
+</apex:page>

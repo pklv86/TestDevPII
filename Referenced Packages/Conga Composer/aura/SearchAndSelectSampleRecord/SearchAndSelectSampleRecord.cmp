@@ -1,0 +1,22 @@
+<aura:component extends="SearchAndSelectBase" >
+  <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+  <aura:method name="reInit" action="{!c.init}" description="Runs the init method again" />
+  <aura:method name="hideSampleRecords" action="{!c.hideSampleRecords}" description="Hides all the items" />
+  <aura:attribute name="sampleRecordId" type="String" />
+  <aura:attribute name="myMasterObject" type="String" />
+    
+    <div class="slds-lookup__menu" id="lookup-66" style="{!(v.showItems ? '' : 'display: none; ')}">
+    <span class="slds-truncate" >&quot;{!v.searchStr}&quot; in {!v.myMasterObject}</span>
+    <ul class="slds-lookup__list" role="listbox">
+    <aura:iteration items="{!v.searchedItems}" var="item">
+        <span class="slds-lookup__item-action slds-media" id="{!item.Id}" title="{!item.Name}" onclick="{!c.selectThisRecord}" role="option">
+          <lightning:icon iconName="custom:custom3" size="small" class="slds-input__icon slds-icon-text-default"/>
+          <div class="slds-p-left--x-small">
+            <div class="slds-lookup__result-text">{!item.Name}</div>
+          </div>
+          <br />
+        </span>
+      </aura:iteration>
+    </ul>
+  </div>
+</aura:component>

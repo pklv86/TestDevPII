@@ -1,0 +1,24 @@
+<apex:page controller="batchProcessMassMarket">
+    <script type="text/javascript">
+    function processMassMarket() {
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.batchProcessMassMarket.ProcessMassMarket}',             
+            function(result, event){
+                if (event.status) {
+                    alert(result);
+                } else if (event.type === 'exception') {
+                    alert(event.message + ' ' + event.where);
+                } else {
+                    alert(event.message);
+                }                
+            }, 
+            {escape: true}
+        );
+    }
+    </script>
+    <apex:pageBlock id="block">
+    	<div style="text-align: center;">
+    		<button onclick="processMassMarket()">Process Mass Market</button>
+		</div>        
+    </apex:pageBlock>
+</apex:page>

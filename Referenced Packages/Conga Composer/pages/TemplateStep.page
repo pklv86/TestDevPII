@@ -1,0 +1,20 @@
+<apex:page >
+	<apex:includeLightning />
+	<script>
+		
+        $Lightning.use("APXTConga4:AppForVisualForcePages", function() {
+          $Lightning.createComponent("APXTConga4:TemplateStep",
+          {index:2,
+            masterObject: '{!$CurrentPage.parameters.mo}',
+            solutionName: '{!$CurrentPage.parameters.sn}',
+            solutionId: '{!$CurrentPage.parameters.sid}'},
+          "lightning",
+          function(cmp) {
+            
+          });
+        });
+    </script>
+
+    <div id="lightning" />
+
+</apex:page>

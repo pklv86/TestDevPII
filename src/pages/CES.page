@@ -1,0 +1,6 @@
+<apex:page controller="CESOutbound" >
+	<apex:form >
+		<apex:pageBlock >
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

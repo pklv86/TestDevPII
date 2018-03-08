@@ -1,0 +1,123 @@
+<apex:page >
+
+<style>
+Header {  style="font-family:verdana;" size:"10"; align : "left"; fontWeight:"bold"; color:black;}
+bodyText {color:blue;}
+</style>
+
+<br></br>
+<br></br>
+
+<h1 align ="Center"><font size="5" color="black">Release Management System  </font></h1>
+ <hr></hr>
+<p style="font-family:verdana;" align = "left"><font size="3" color="black"> 
+Release Management System consist of two installation, Release Management Server and Deployment Client.  This package installs Release Management Server</font></p>
+<br></br>    
+
+ 
+ <p style="font-family:verdana;" align = "left"><font size="3" color="black">Ensure <a><b> Deployment Client</b> </a> is installed on development sandbox for developers to commit changes</font> </p>
+ <br></br>
+ <p style="font-family:verdana;"  align = "left"><font size="3" color="black">Please click the below links to understand the concept and setup of the application </font></p>
+
+ <hr></hr>
+ 
+ 
+
+ 
+ 
+<table ALIGN="center" border="0" cellspacing="30" cellpadding="2" width="65%">
+
+<tr>
+<td  width="25%" align="center"  bgcolor="#AED6F1">
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+        <a href="http://letscreate.biz/centralized-release-management/" target="_blank">
+       <Header ><font size="5"><b>Step </b></font>
+       <font size="5" color="red">1</font></Header >
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>  
+       <font size="4" color="white"> Client Server concept</font>
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+ </td>
+<td  width="25%" align="center"  bgcolor="#AED6F1">
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+        <a href="http://letscreate.biz/54726-2/" target="_blank">
+       <Header ><font size="5"><b>Step </b></font>
+        <font size="5" color="red">2</font></Header >
+        </a>
+         &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>  
+       <font size="4" color="white"> Install and configure server</font>
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>
+ </td>
+    
+<td width="25%" align="center"  bgcolor="#AED6F1">
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+        <a href="http://letscreate.biz/54726-2/" target="_blank">
+       <Header ><font size="5"><b>Step </b></font>
+        <font size="5" color="red">3</font></Header >
+        </a>
+         &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>  
+      <p> <font size="4" color="white"> Build Connections to Deployment Environments</font></p>
+      &nbsp;&nbsp;
+ </td>
+
+
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+</tr>
+<tr>
+<td align="center"  bgcolor="#AED6F1">
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+        <a href="http://letscreate.biz/54726-2/" target="_blank">
+       <Header ><font size="5"><b>Step </b></font>
+        <font size="5" color="red">4</font></Header >
+        </a>
+         &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>  
+       <font size="4" color="white"> Set version control</font>
+       &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+ </td>
+<td align="center"  bgcolor="#AED6F1">
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+        <a href="http://letscreate.biz/54726-2/" target="_blank">
+       <Header ><font size="5"><b>Step </b></font>
+        <font size="5" color="red">5</font></Header >
+        </a>
+         &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>  
+       <font size="4" color="white"> Deploy and Validate</font>&nbsp;&nbsp;
+ </td>
+<td align="center"  bgcolor="#AED6F1">
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+           &nbsp;&nbsp;&nbsp;&nbsp;  <br></br> 
+        <a href="http://letscreate.biz/54726-2/" target="_blank">
+       <Header ><font size="5"><b>Step </b></font>
+        <font size="5" color="red">6</font></Header >
+        </a>
+         &nbsp;&nbsp;&nbsp;&nbsp;  <br></br>  
+       <font size="4" color="white"> Mobile Notifications</font>&nbsp;&nbsp;
+ </td>
+
+</tr>
+    
+</table>
+
+</apex:page>

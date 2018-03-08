@@ -1,0 +1,30 @@
+<apex:page standardController="OFSServer__Repository__c" extensions="OFSServer.RepositoryController" tabStyle="OFSServer__Repository__c"  showChat="true"   id="RepPage">
+    <apex:form id="dpForm">
+        <div class="bPageTitle">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="/s.gif" alt="Releases" class="pageTitleIcon" title="Releases"/>
+                    <h1 class="pageType">Repository Edit<span class="titleSeparatingColon">:</span></h1>
+                    <h2 class="pageDescription"> New Repository</h2>
+                    <div class="blank">&nbsp;</div>
+                </div>
+                <div class="links"></div>
+            </div>
+            <div class="ptBreadcrumb"></div>
+        </div>
+        <div class="bPageBlock brandSecondaryBrd bEditBlock secondaryPalette">
+            <apex:pageBlock id="pb1" title="Repository Edit" mode="maindetail"> 
+                <apex:pageBlockButtons id="pbbInforemove" >
+                    <apex:commandButton id="btnEditButton" value="Save"  action="{!saveRelease}" />
+                    <apex:commandButton id="btnDeleteButton" value="Cancel"  action="{!cancelRelease}" immediate="true" /> 
+                </apex:pageBlockButtons>                       
+                <apex:pageBlockSection title="Information" columns="2" collapsible="false" showHeader="true" >
+                    
+                    <apex:inputField value="{!objRepository.Name}" required="true"/>
+                    <apex:inputField value="{!objRepository.OFSServer__Type__c}" required="true"/>
+                    <apex:inputField value="{!objRepository.OFSServer__URL__c}" required="false"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock> 
+        </div>
+    </apex:form>
+</apex:page>

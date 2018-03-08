@@ -1,0 +1,32 @@
+<aura:component extends="LightningTableBase">
+    <aura:registerEvent name="spinnerEvent" type="APXTConga4:SpinnerEvent" />
+    <aura:handler name="stepEvent" event="APXTConga4:StepEvent" action="{!c.captureEvent}" />
+    <aura:method name="reInit" action="{!c.doInit}" description="Runs the init method again" />
+    <aura:set attribute="showPager" value="false" />
+
+    <table class="slds-table slds-table--bordered slds-max-medium-table--stacked" >
+        <thead>
+            <tr class="slds-text-heading--label">
+                <aura:iteration items="{!v.headers}" var="header" >
+                    <th class="slds-is-sortable" style="margin-left: 0px; padding-left: 0px; vertical-align:left;" scope="col">
+                      <div class="slds-truncate" >{!header}</div>
+                    </th>
+                </aura:iteration>
+                <th class="slds-cell-shrink"></th>
+            </tr>
+        </thead>
+        <aura:iteration items="{!v.latestRecords}" var="record" >
+        <tr >
+          <td style="vertical-align:left;"><div class="slds-truncate" ><lightning:icon iconName="{!'doctype:' + record.APXTConga4__Template_Extension__c}" size="small" alternativeText="Template Type"/></div></td>
+          <td style="margin-left: 0px; padding-left: 0px;style vertical-align:left;"><div class="slds-truncate" title="{!record.APXTConga4__Template_Name__c}" >{!record.APXTConga4__Template_Name__c}</div></td>
+          <td style="margin-left: 0px; padding-left: 0px; vertical-align:left;"><div class="slds-truncate" title="{!record.APXTConga4__Template_Group__c}" >{!record.APXTConga4__Template_Group__c}</div></td>
+          <td style="margin-left: 0px; padding-left: 0px; vertical-align:left;"><div class="slds-truncate" title="{!record.APXTConga4__Conga_Template__r.APXTConga4__Description__c}" >{!record.APXTConga4__Conga_Template__r.APXTConga4__Description__c}</div></td>
+          <td style="margin-left: 0px; padding-left: 0px; vertical-align:left;"><div class="slds-truncate" title="{!record.LastModifiedBy.Name}" >{!record.LastModifiedBy.Name}&nbsp;&nbsp;{!record.LastModifiedDate}</div></td>
+          <td style="margin-left: 0px; padding-left: 0px; padding-right: 0px; vertical-align:left;">
+              <APXTConga4:DataStepSelectItem aura:id="ddm" previewId="{!record.APXTConga4__Conga_Template__c}" editId="{!record.APXTConga4__Conga_Template__c}" recordId="{!record.Id}" />
+        
+            </td>
+        </tr>
+    </aura:iteration>
+    </table>
+</aura:component>

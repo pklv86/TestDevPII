@@ -1,0 +1,20 @@
+<apex:page standardController="LDC_Account__c">
+<script>
+var Msg ='';
+
+if({!LDC_Account__c.Active_Alert__c} && {!LDC_Account__c.Alert_Days__c} >= 0 ){
+  
+    if({!LDC_Account__c.Opt_out__c}){
+        Msg+='Customer Opted out.';
+    }
+    Msg+='Customer Opted for alerts till {!LDC_Account__c.Alert_Expires__c} as {!LDC_Account__c.Alert_Description__c}';
+    alert('Alert Message : '+Msg);
+}
+
+if({!LDC_Account__c.Opt_out__c}){
+    Msg+='Customer Opted out.';
+    alert('Alert Message : '+Msg);
+}
+
+</script>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page Controller="OFSServer.clsMetadata" action="{!populateCustomSetting}" >
+    <apex:form >
+        <apex:outputLabel >Populates Setting</apex:outputLabel>        
+        <apex:commandButton value="Execute" action="{!populateCustomSetting}"></apex:commandButton>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,57 @@
+<aura:component extends="APXTConga4:BaseStep" controller="APXTConga4.SolutionController" implements="force:appHostable">
+  <ltng:require scripts="{!$Resource.APXTConga4__LightningUtils}" />
+  <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+  <aura:attribute name="theme" type="String" />
+  <aura:attribute name="objectList" type="List" />
+  <aura:attribute name="selectedObject" type="String" default="-- Select a Salesforce Object --" />
+  <aura:attribute name="sampleRecordName" type="String" />
+  <aura:attribute name="description" type="String" />
+  <aura:attribute name="remoteSiteList" type="String" />
+  <aura:attribute name="remoteSiteListString" type="String" />
+  <aura:attribute name="VFServerURL" type="String" />
+  <aura:attribute name="MyDomainNameSpaceVFServerBaseURL" type="String" />
+  <aura:attribute name="SFServerBaseURL" type="String" />
+  <aura:handler name="stepEvent" event="APXTConga4:StepEvent" action="{!c.captureRemoteSiteSettingsEvent}" />
+  
+  <div class="slds-m-around--large">
+    <div class="slds-border--bottom slds-m-bottom--large">
+      <div class="slds-text-heading--large">Add Solution Details    <span class="slds-text-body--small">All fields marked with a * are required fields.</span></div>
+    </div>
+    <div class="slds-grid slds-grid--pull-padded-medium" onclick="{! c.hideSampleRecords }">
+      <div class="slds-col slds-p-horizontal--medium slds-form--stacked">
+        <div class="slds-form-element">
+          <div class="slds-form-element__control">
+            <lightning:input aura:id="solutionName" name="solutionName" label="Name" value="{!v.solutionName}" required="true" messageWhenPatternMismatch="Letters, numbers, spaces, and underscores only" pattern="^[a-zA-Z0-9_]+([a-zA-Z0-9_\s]+)*$" maxlength="80" messageWhenTooLong="80 characters maximum" />
+          </div>
+        </div>
+        <div class="slds-form-element">
+          <div class="slds-form-element__control">
+           <lightning:select name="masterObject" label="Salesforce Object" required="true" aura:id="selectMasterObject" onchange="{!c.onMasterObjectChange}" value="{!v.masterObject}" >
+            <aura:iteration items="{!v.objectList}" var="obj">
+              <option selected="{!obj.Value==v.masterObject}" value="{!obj.Value}">{!obj.Key}</option>
+            </aura:iteration>
+          </lightning:select>
+        </div>
+      </div>
+      <div class="slds-form-element">
+        <div class="slds-form-element__control">
+          <label class="slds-form-element__label">Sample Record</label>
+          <APXTConga4:SearchAndSelectSampleRecord myMasterObject="{!v.masterObject}" searchStr="{!v.sampleRecordName}" aura:id="searchAndSelectSampleRecord" />
+        </div>
+      </div>
+      <div class="slds-form-element">
+       <lightning:textarea name="description" aura:id="description" maxlength="300" messageWhenTooLong="300 characters maximum" label="Description"  value="{!v.description}" />
+     </div>
+     <div class="slds-form-element slds-text-align--right">
+      <lightning:button label="{!(v.solutionId =='' ? 'Create' : 'Save')}" title="Create" onclick="{! c.createSolution }" />
+    </div>
+  </div>
+
+  <div class="slds-col slds-p-horizontal--medium">
+    <div class="slds-align--absolute-center" style="border:0px solid; height:500px; width:500px;"></div>
+  </div>
+</div>
+</div>
+<APXTConga4:RemoteSiteSettingsModal aura:id="remoteSiteSettingsModal" remoteSiteList="{!v.remoteSiteListString}" VFServerURL="{!v.VFServerURL}" MyDomainNameSpaceVFServerBaseURL="{!v.MyDomainNameSpaceVFServerBaseURL}" SFServerBaseURL="{!v.SFServerBaseURL}" />
+<!-- <c:StepFooter acceptButton="Next"/> -->
+</aura:component>

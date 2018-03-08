@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>PaginatorFirst</fullName>
+        <categories>Deal Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PaginatorFirst</shortDescription>
+        <value>&lt;&lt;First</value>
+    </labels>
+    <labels>
+        <fullName>PaginatorGoToPage</fullName>
+        <categories>Deal Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PaginatorGoToPage</shortDescription>
+        <value>Go to page</value>
+    </labels>
+    <labels>
+        <fullName>PaginatorLast</fullName>
+        <categories>Deal Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PaginatorLast</shortDescription>
+        <value>Last&gt;&gt;</value>
+    </labels>
+    <labels>
+        <fullName>PaginatorNext</fullName>
+        <categories>Deal Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PaginatorNext</shortDescription>
+        <value>Next&gt;</value>
+    </labels>
+    <labels>
+        <fullName>PaginatorPrevious</fullName>
+        <categories>Deal Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PaginatorPrevious</shortDescription>
+        <value>&lt;Previous</value>
+    </labels>
+</CustomLabels>

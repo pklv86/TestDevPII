@@ -1,0 +1,57 @@
+<aura:component controller="APXTConga4.sObjectRecordController" extends="BaseStep">
+	<aura:attribute name="templatesToAdd" type="String[]"/>
+	<aura:attribute name="showSpinner" type="Boolean" default="false" />
+	<aura:attribute name="solutionId" type="String" />
+	<aura:set attribute="showNav" value="false" />
+	<aura:handler name="stepEvent" event="APXTConga4:StepEvent" action="{!c.captureStepEvent}" />
+	<aura:handler name="spinnerEvent" event="APXTConga4:SpinnerEvent" action="{!c.captureSpinnerEvent}" />
+
+	<aura:if isTrue="{!v.showSpinner}">
+		<div class="slds-spinner_container">
+			<div class="slds-spinner--brand  slds-spinner slds-spinner--medium" role="alert">
+				<span class="slds-assistive-text">Loading</span>
+				<div class="slds-spinner__dot-a"></div>
+				<div class="slds-spinner__dot-b"></div>
+			</div>
+		</div> 
+	</aura:if>
+	<div class="slds-border--bottom slds-m-bottom--small">
+		<span class="slds-text-heading--medium">Templates</span>
+	</div>
+	<div class="slds-m-bottom--small"><br />
+	<span>Choose the template(s) you would like to add to your solution.</span>
+
+</div>
+<div class="slds-grid slds-grid_pull-padded">
+	<div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3" style="width: 420px;">
+		<APXTConga4:SearchAndSelectTemplates aura:id="searchAndSelectTemplates" />
+	</div>
+	<div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3" style="width: 150px;">
+		<lightning:button label="Add Templates" title="Add Templates" iconName="utility:right" iconPosition="left" onclick="{! c.addTemplateClick }" />
+	</div>
+	<div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-3" style="width: 907px;"> 
+		<div >
+			<div class="slds-float--right">
+				<button class="slds-button slds-button--neutral" onclick="{! c.uploadTemplateClick }">
+					Upload New Template
+				</button>
+			</div>
+			<div class="slds-float--right slds-m-right--small">
+				<button class="slds-button slds-button--neutral" onclick="{! c.createTemplateClick }">
+					Create New Template
+				</button>
+			</div>
+		</div>
+		<br />
+		<APXTConga4:LightningTableTemplates aura:id="lightningTableTemplates" object="APXTConga4__Conga_Solution_Template__c" 
+			fields="Id,APXTConga4__Template_Name__c,APXTConga4__Template_Group__c,APXTConga4__Template_Extension__c,APXTConga4__Conga_Template__c,APXTConga4__Conga_Template__r.APXTConga4__Description__c,LastModifiedBy.Name,LastModifiedDate"
+			headers=",Name,Template Group,Description,Last Modified"
+			pageSize="10" latestRecords="!v.latestRecords" solutionId="{!v.solutionId}" />
+		</div>
+	</div>
+	<APXTConga4:StepFooter acceptButton="Next" declineButton="Back"/>
+	
+	<APXTConga4:UploadTemplateModal aura:id="uploadTemplateModal" solutionId="{!v.solutionId}" />
+	<APXTConga4:CreateTemplateModal aura:id="createTemplateModal" solutionId="{!v.solutionId}" />
+
+</aura:component>

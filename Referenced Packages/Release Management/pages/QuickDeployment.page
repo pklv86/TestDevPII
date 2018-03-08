@@ -1,0 +1,29 @@
+<apex:page standardController="OFSServer__ReleaseEnvironment__c" extensions="OFSServer.ReleaseEnvironment" tabStyle="OFSServer__ReleaseEnvironment__c"  showChat="true"   id="rEPage" action="{!fetchQuickDeployAndEnvironment}">
+    <apex:form id="dpForm">
+        <div class="bPageTitle">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="/s.gif" alt="Releases" class="pageTitleIcon" title="Releases"/>
+                    <h1 class="pageType"><span class="titleSeparatingColon">:</span></h1>
+                    <h2 class="pageDescription"> Quick Deployment</h2>
+                    <div class="blank">&nbsp;</div>
+                </div>
+                <div class="links"></div>
+            </div>
+            <div class="ptBreadcrumb"></div>
+        </div>
+        <apex:pageBlock id="pb1"  mode="maindetail"> 
+            <apex:pageBlockButtons id="pbbInforemove" location="bottom" rendered="false">
+                <apex:commandButton id="btnEditButton" value="Quick Deploy"  action="{!updatePackageEnv}" />
+                <apex:commandButton id="btnDeleteButton" value="Cancel"  action="{!cancelRelease}" /> 
+            </apex:pageBlockButtons>                       
+            
+            <apex:pageBlockTable id="pbProducts" value="{!lstEnvs}" var="objPackEnv" rendered="{!lstEnvs.size > 0}" width="50%" columnsWidth="250px">
+                <apex:column value="{!objPackEnv.OFSServer__Environment__c}" />
+                <apex:column >                   
+                    <apex:commandButton id="btnEditButton" value="Quick Deploy"  action="{!updatePackageEnv}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

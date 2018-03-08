@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Release</fullName>
+        <fields>Name</fields>
+        <fields>ReleaseStatus__c</fields>
+        <label>Release</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Combined_Deployment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Combined Deployment</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Continuous_Integration_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Continuous Integration Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DeployNow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>DeployNow</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Mobile Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Package__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Package</label>
+        <referenceTo>Package__c</referenceTo>
+        <relationshipLabel>Releases</relationshipLabel>
+        <relationshipName>Releases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReleaseName__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ReleaseName</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ReleaseStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Release Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Schedule_Deployment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deployment Schedule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Success</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In-Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Failure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>InActive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TestLevel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>NoTestRun—No tests are run.
+RunSpecifiedTests—Only the tests that you specify in the runTests.
+RunLocalTests—All tests in your organization are run, except the ones that originate from installed managed packages
+RunAllTestsInOrg—All tests are run.</inlineHelpText>
+        <label>Test Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NoTestRun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RunSpecifiedTests</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RunLocalTests</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RunAllTestsInOrg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Releases</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>ReleaseName__c</columns>
+        <columns>ReleaseStatus__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Mobile_Enabled__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Mobile Enabled</label>
+    </listViews>
+    <listViews>
+        <fullName>Mobile_Release</fullName>
+        <columns>NAME</columns>
+        <columns>Mobile_Enabled__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Mobile_Enabled__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Mobile Release</label>
+    </listViews>
+    <nameField>
+        <label>Release Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Releases</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Active</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Release</compactLayoutAssignment>
+        <label>Active</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InActive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Success</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TestLevel__c</picklist>
+            <values>
+                <fullName>NoTestRun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunAllTestsInOrg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunLocalTests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunSpecifiedTests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DeployedRelease</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Release</compactLayoutAssignment>
+        <label>DeployedRelease</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InActive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Success</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TestLevel__c</picklist>
+            <values>
+                <fullName>NoTestRun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunAllTestsInOrg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunLocalTests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunSpecifiedTests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OpenRelease</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>Release</compactLayoutAssignment>
+        <label>OpenRelease</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InActive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Success</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TestLevel__c</picklist>
+            <values>
+                <fullName>NoTestRun</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunAllTestsInOrg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunLocalTests</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RunSpecifiedTests</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Release_Name_Change_in_Active_Status</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISCHANGED(Name) , TEXT( Status__c)==&apos;Active&apos;)</errorConditionFormula>
+        <errorMessage>You are not allow to change name of Active release.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Activate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Activate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;OFSServer.SyncDeploymentOperations&quot;,&quot;deployReleaseActivate&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+if(res == &quot;success&quot;){ 
+
+window.location.reload(true); 
+}else{ 
+window.alert(res); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;OFSServer.DeploymentOperations&quot;,&quot;cloneRelease&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+//window.alert(&apos;Deployment is successfully Started&apos; ); 
+document.location = &apos;/&apos; + res +&apos;/e?retURL=&apos; + res ;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>DeActivate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>DeActivate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;OFSServer.SyncDeploymentOperations&quot;,&quot;deployReleaseDeActivate&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+if(res == &quot;success&quot;){ 
+window.location.reload(true); 
+}else{ 
+window.alert(res); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Deploy</fullName>
+        <availability>online</availability>
+        <description>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;ASA.DeploymentOperations&quot;,&quot;deployRelease&quot;, {strReleaseId:&quot;{! ASA__Releases__c.Id}&quot;}); 
+if(res == &quot;success&quot;){ 
+//window.alert(&apos;Deployment is successfully Started&apos; ); 
+window.location.reload(true); 
+}else{ 
+window.alert(res); 
+}</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Deploy</masterLabel>
+        <openType>sidebar</openType>
+        <page>StatusLandingPage</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Deployment_Status</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Deployment Status</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+//var res = sforce.apex.execute(&quot;OFSServer.DeploymentTest&quot;,&quot;deployTest&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+
+ window.alert(&apos;Deployment Status from JavaScript&apos;);
+//window.location=&quot;https://na30.salesforce.com/changemgmt/monitorDeploymentsDetails.apexp?retURL=/changemgmt/monitorDeployment.apexp&amp;asyncId=0Af3600000zwfFl&quot;;
+
+window.location=&apos;https://na30.salesforce.com/apex/test&apos;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GetPackages</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>GetPackages</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;OFSServer.SyncDeploymentOperations&quot;,&quot;getPackagesFromEnvironments&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+if(res == &quot;success&quot;){ 
+
+window.location.reload(true); 
+}else{ 
+window.alert(res); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Rollback</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Rollback</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;OFSServer.DeploymentOperations&quot;,&quot;rollbackRelease&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+if(res == &quot;success&quot;){ 
+//window.alert(&apos;Rollback is successfully Started&apos; ); 
+window.location.reload(true); 
+}else{ 
+window.alert(res); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Validate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Validate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)} 
+
+var res = sforce.apex.execute(&quot;OFSServer.DeploymentOperations&quot;,&quot;validateRelease&quot;, {strReleaseId:&quot;{! Releases__c.Id}&quot;}); 
+if(res == &quot;success&quot;){ 
+//window.alert(&apos;Deployment is successfully Started&apos; ); 
+window.location.reload(true); 
+}else{ 
+window.alert(res); 
+}</url>
+    </webLinks>
+</CustomObject>

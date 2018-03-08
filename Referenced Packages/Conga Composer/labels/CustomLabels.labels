@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Access_Control_Violation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Access Control Violation Warning</shortDescription>
+        <value>You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the Conga Solution record or your administrator if access necessary.</value>
+    </labels>
+    <labels>
+        <fullName>Account_Brief_Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Account Brief Description</shortDescription>
+        <value>Create account briefs that use the
+Account Object. Includes
+pre-built queries and Word templates.</value>
+    </labels>
+    <labels>
+        <fullName>Button_Create_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Button Create Warning</shortDescription>
+        <value>Something went wrong with creating your button. Please refresh the page or rebuild your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Client_Letter_Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Client Letter Description</shortDescription>
+        <value>Create client letters that use the
+Contact Object. Includes a
+pre-built Word template.</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Object_Warning</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Quote object not enabled.</shortDescription>
+        <value>It appears you do not have the Quote object enabled. The Quote object is required for the Sales Quote Quick Start, please go to Setup &gt; Customize &gt; Quotes &gt; Quotes Settings to enable.</value>
+    </labels>
+    <labels>
+        <fullName>Record_Retrieve_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Record Retrieve Error</shortDescription>
+        <value>Something went wrong with retrieving your records. Please refresh the page or rebuild your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Proposal_Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sales Proposal Description</shortDescription>
+        <value>Create sales proposals that use the
+Opportunity and Opportunity line items. Includes
+pre-built Word and email templates.</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Quote_Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sales Quote Description</shortDescription>
+        <value>Create sales quotes that use the
+Quote Object. Includes a pre-built Excel template.
+* You must have the Quote object enabled for this solution.</value>
+    </labels>
+    <labels>
+        <fullName>Solution_Create_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Solution Creation Error</shortDescription>
+        <value>Something went wrong with creating your solution record. Please refresh the page or rebuild your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Solution_Retrieve_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Solution Retrieve Error</shortDescription>
+        <value>Something went wrong with retrieving your solution details. Please refresh the page or rebuild your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Template_Retrieve_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Template Retrieve Error</shortDescription>
+        <value>Something went wrong with retrieving your templates. Please refresh the page or rebuild your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Template_Save_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Template Save Error</shortDescription>
+        <value>Something went wrong with saving your templates. Please refresh the page or rebuild your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Template_Warning</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Template Warning</shortDescription>
+        <value>Cannot add templates. Your solution does not yet exist. Please go to Step 1: Details to create your solution.</value>
+    </labels>
+    <labels>
+        <fullName>Toast_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Toast Title</shortDescription>
+        <value>There was an error processing your request.</value>
+    </labels>
+</CustomLabels>

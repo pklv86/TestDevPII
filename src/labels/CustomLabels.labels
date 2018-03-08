@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccQueryFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccQueryFields</shortDescription>
+        <value>Id:Name:Type:Industry:Contracting_Entity__c</value>
+    </labels>
+    <labels>
+        <fullName>AcntQueryFields</fullName>
+        <categories>PricingResponseWebService</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AcntQueryFields</shortDescription>
+        <value>Id:Name:Muni_Agg__c</value>
+    </labels>
+    <labels>
+        <fullName>Cannot_Add_New_Quotes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cannot Add New Quotes</shortDescription>
+        <value>New quotes cannot be added after Executable quote is generated</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Mark_Enrollment_MSG</fullName>
+        <categories>Enrollment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract_Mark_Enrollment_MSG</shortDescription>
+        <value>Contract is Marked for Enrollment</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Not_Active_MSG</fullName>
+        <categories>Enrollment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract_Not_Active_MSG</shortDescription>
+        <value>Contract must be Activated for Enrollment</value>
+    </labels>
+    <labels>
+        <fullName>Contract_RE_Mark_Enrollment_MSG</fullName>
+        <categories>Enrollment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract_RE_Mark_Enrollment_MSG</shortDescription>
+        <value>Contract is already been Marked or Processed for Enrollment</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Type_Invalid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract Type Invalid</shortDescription>
+        <value>Contract Type is Required</value>
+    </labels>
+    <labels>
+        <fullName>Credit_Check_Approval_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Credit Check Approval Message</shortDescription>
+        <value>Get the credit check approval before proceeding to creating an executable quote</value>
+    </labels>
+    <labels>
+        <fullName>Duplicate_DASR_Request_For_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duplicate DASR Request For Date</shortDescription>
+        <value>Existing DASR request with the same DASR Submit Date is found. Please use an existing DASR request or use a different date.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Aggregator_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Aggregator Code</shortDescription>
+        <value>Invalid Aggregator Code</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Bill_Calculator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Bill Calculator</shortDescription>
+        <value>Invalid bill calculator.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Bill_Method</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Bill Method</shortDescription>
+        <value>Invalid Bill method.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Bill_Presenter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Bill Presenter</shortDescription>
+        <value>Invalid bill presenter.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Billing_City</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Billing City</shortDescription>
+        <value>Invalid billing address city.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Billing_State</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Billing State</shortDescription>
+        <value>Invalid billing address state.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Billing_Street</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Billing Street</shortDescription>
+        <value>Invalid billing address street.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Change_Reason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Change Reason</shortDescription>
+        <value>Invalid change reason.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_City</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid City</shortDescription>
+        <value>Invalid service address city.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Contract_Counter_Signed_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Contract Counter Signed Date</shortDescription>
+        <value>Invalid contract counter signed date.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Contract_Effective_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Contract Effective Date</shortDescription>
+        <value>Invalid contract effective date.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Contract_End_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Contract End Date</shortDescription>
+        <value>Invalid contract end date.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Dials_Quantity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Dials Quantity</shortDescription>
+        <value>Invalid dials quantity.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Distribution_Loass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Distribution Loass</shortDescription>
+        <value>Invalid distribution loss.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Future_Contract_Counter_Signed_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Future Contract Counter Signed Date</shortDescription>
+        <value>Invalid contract couter signed date. Date cannot be in future.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Interval_Usage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Interval Usage</shortDescription>
+        <value>Invalid interval usage. Please select a valid interval usage.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_LDC_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid LDC Account</shortDescription>
+        <value>Invalid LDC Account.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_LDC_Meter_Cycle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid LDC Meter Cycle</shortDescription>
+        <value>Invalid LDC meter cycle</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_LDC_Rate_Class</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid LDC Rate Class</shortDescription>
+        <value>Invalid LDC rate class.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_LDC_Rate_Subclass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid LDC Rate Subclass</shortDescription>
+        <value>Invalid LDC rate sub class.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Load_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Load Profile</shortDescription>
+        <value>Invalid Load Profile.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Meter_Maintenance_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Meter Maintenance Code</shortDescription>
+        <value>Invalid meter maintenance code.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Meter_Multiplier</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Meter Multiplier</shortDescription>
+        <value>Invalid meter multiplier.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Meter_Type_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Meter Type Code</shortDescription>
+        <value>Invalid meter type code.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Old_Meter_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Old Meter Number</shortDescription>
+        <value>Invalid Old Meter Number.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Rate_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Rate Code</shortDescription>
+        <value>Invalid rate code.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Reason_Description</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Reason Description</shortDescription>
+        <value>Invalid reason description.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Request</shortDescription>
+        <value>Invalid request.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Service_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Service Address</shortDescription>
+        <value>Invalid service address street.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Start_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Start Date</shortDescription>
+        <value>Invalid contract start date.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_State</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid State</shortDescription>
+        <value>Invalid service address state.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Invalid_Time_Of_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Invalid Time Of User</shortDescription>
+        <value>Invalid time of use metering.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Originator_DUNS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Originator DUNS</shortDescription>
+        <value>Invalid supplier DUNS.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Vendor_DUNS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Vendor DUNS</shortDescription>
+        <value>Invalid vendor DUNS.</value>
+    </labels>
+    <labels>
+        <fullName>EDI_Web_Service_Version</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EDI Web Service Version</shortDescription>
+        <value>01.49</value>
+    </labels>
+    <labels>
+        <fullName>Executable_Quote_Generated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Executable Quote Generated</shortDescription>
+        <value>Executable price is generated and price is still valid</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Change_Reason_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Change Reason Value</shortDescription>
+        <value>Invalid change reason for DASR request. Please select different change reason code.</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Contract_To_Enroll</fullName>
+        <categories>Enrollment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Contract To Enroll</shortDescription>
+        <value>Invalid Contract to Enroll</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Drop_Reason</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Drop Reason</shortDescription>
+        <value>Invalid drop reason.</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_LDC_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid LDC Number</shortDescription>
+        <value>Invalid LDC Number.</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Quote_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid_Quote_Status</shortDescription>
+        <value>Please add a Request Status to one of your Retail Quotes</value>
+    </labels>
+    <labels>
+        <fullName>LDC_Account_Prefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LDC Account Prefix</shortDescription>
+        <value>a0B</value>
+    </labels>
+    <labels>
+        <fullName>LDC_Required_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LDC Required Field</shortDescription>
+        <value>One of the Required fields are missing on LDC Account</value>
+    </labels>
+    <labels>
+        <fullName>LodeStar_Mailers</fullName>
+        <categories>Mailing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LodeStar Mailers</shortDescription>
+        <value>prasad paladugu</value>
+    </labels>
+    <labels>
+        <fullName>Lode_Star_End_Point</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lode Star End Point</shortDescription>
+        <value>https://salesforcetest.dynegy.com/SforceLstar.svc/SforceLstar</value>
+    </labels>
+    <labels>
+        <fullName>Manual_Pricing_in_Process</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manual Pricing in Process</shortDescription>
+        <value>Manual Pricing in Process, at this time you cannot refresh the price.</value>
+    </labels>
+    <labels>
+        <fullName>Missing_Contract_LDCs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Missing Contract LDCs</shortDescription>
+        <value>Prasad Paladugu</value>
+    </labels>
+    <labels>
+        <fullName>Muni_Agg_Enrollment_Opt_Out_MSG</fullName>
+        <categories>Enrollment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Muni Agg Enrollment Opt Out MSG</shortDescription>
+        <value>Account is still in OPT OUT period. Not ready for Enrollment</value>
+    </labels>
+    <labels>
+        <fullName>New_Quote_Record_Created</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Quote Record Created</shortDescription>
+        <value>New quote is created</value>
+    </labels>
+    <labels>
+        <fullName>No_Quote_Record_on_Oppty</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Quote Record on Oppty</shortDescription>
+        <value>Please add Quotes and then request for Price</value>
+    </labels>
+    <labels>
+        <fullName>No_Quotes_available_for_Executable_Price</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Quotes available for Executable Price</shortDescription>
+        <value>Please add qualified quotes and then request for the Executable Price....</value>
+    </labels>
+    <labels>
+        <fullName>No_Quotes_for_Executable_available</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Quotes for Executable available</shortDescription>
+        <value>No qualified quotes are available</value>
+    </labels>
+    <labels>
+        <fullName>No_Quotes_on_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No_Quotes_on_Opportunity</shortDescription>
+        <value>Please add Quotes and request for price</value>
+    </labels>
+    <labels>
+        <fullName>OppQueryFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OppQueryFields</shortDescription>
+        <value>Id:Name:Pricing_Due_Date__c:Pricing_Desk_Contact__c:Type:Service_Territory__c:Offer_Type__c:Pricing_Type__c:Supplier_DUNS__c:Workbook_Location__c:Special_Pricing_Instructions__c:Target_Price__c:Contract.ContractNumber:CreatedBy.Name:Refresh_Expiration_Date__c:Executable_Quote_Generated__c:AccountId:RecordType.Name:(Select Id, Name, LDC_Account__r.LDC_Account_Number__c, LDC_Account__r.LDC_Vendor__r.DUNS__c, LDC_Account__r.LDC_Vendor__r.Utility_Code__c from OpportunityLDCs__r)</value>
+    </labels>
+    <labels>
+        <fullName>OpportunityLDCPageSize</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpportunityLDCPageSize</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>Opt_Out_End_Date_MSG</fullName>
+        <categories>Enrollment</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opt Out End Date MSG</shortDescription>
+        <value>Invalid Opt Out End Date</value>
+    </labels>
+    <labels>
+        <fullName>Price_Still_Valid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price Still Valid</shortDescription>
+        <value>Price is still valid or waiting for Pricing System response</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_Completed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing Completed</shortDescription>
+        <value>Prices on this Quote still valid</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_Due_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing Due Date</shortDescription>
+        <value>Please change Pricing Due Date value before requesting for a pricing</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_WS_Endpoint_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing WS Endpoint URL</shortDescription>
+        <value>https://salesforcetest.dynegy.com/RetailWS.svc/RetailWS</value>
+    </labels>
+    <labels>
+        <fullName>TMF_Email_List</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TMF Email List</shortDescription>
+        <value>jason.c@dynegy.com1;Jennifer.y@dynegy.com1</value>
+    </labels>
+    <labels>
+        <fullName>TMF_Mailers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TMF Mailers</shortDescription>
+        <value>prasad paladugu;Phungg Nguyenn</value>
+    </labels>
+    <labels>
+        <fullName>Valid_Quotes_Submit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Valid Quotes Submit</shortDescription>
+        <value>All valid quotes have been sent to Pricing System</value>
+    </labels>
+    <labels>
+        <fullName>WS_Pass</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WS Pass</shortDescription>
+        <value>u7SBbSIG</value>
+    </labels>
+    <labels>
+        <fullName>WS_Password</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WS Password</shortDescription>
+        <value>u7SBbSIG</value>
+    </labels>
+    <labels>
+        <fullName>WS_UName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WS UName</shortDescription>
+        <value>dynsfdev</value>
+    </labels>
+    <labels>
+        <fullName>WS_User_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WS User Name</shortDescription>
+        <value>dynsfdev</value>
+    </labels>
+    <labels>
+        <fullName>Waiting_on_Pricing_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Waiting on Pricing Response</shortDescription>
+        <value>Price is still valid or waiting for Pricing System response</value>
+    </labels>
+</CustomLabels>

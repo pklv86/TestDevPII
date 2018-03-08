@@ -1,0 +1,12 @@
+<apex:page showHeader="true" sidebar="true" standardController="OFSServer__Releases__c" extensions="OFSServer.clsLandingPage" action="{!fetchMetadata}">
+    <apex:form >
+        <apex:pageBlock id="pb1" mode="maindetail"> 
+            <apex:pageBlockButtons id="pbbInforemove" location="top">
+                <apex:commandButton id="btnDeploymentButton" value="Cancel"  action="{!Cancel}" /> 
+            </apex:pageBlockButtons>                       
+            <apex:pageBlockSection columns="1">
+                <apex:pageMessages />                
+           </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,25 @@
+<aura:component extensible="true" controller="APXTConga4.sObjectRecordController" extends="BaseStep">
+  <aura:registerEvent name="stepEvent" type="APXTConga4:StepEvent" />
+  <aura:set attribute="showNav" value="false" />
+  <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+  <aura:attribute name="enabled" type="Boolean" default="False" />
+  <aura:attribute name="searchStr" type="String"/>
+  <aura:attribute name="items" type="Array"/>
+  <aura:attribute name="searchedItems" type="Array"/>
+  <aura:attribute name="itemsToShow" type="Integer" default="100" />
+  <aura:attribute name="showItems" type="Boolean" default="False"/>
+
+  <div class="slds-form-element slds-lookup slds-is-open" data-select="single">
+    <div class="slds-form-element">
+      <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+        <lightning:icon iconName="utility:search" size="x-small" class="slds-input__icon slds-icon-text-default"/>
+        <input type="text" aura:id="searchInput" id="searchInput" class="slds-input" placeholder="Search" maxlength="80" onkeyup="{!c.searchKeyChange}" value="{!v.searchStr}" disabled="{!(v.enabled ? '' : 'disabled')}" />
+      </div>
+    </div>
+    
+     <!-- contents of the sub component -->
+    <div>{!v.body}</div>
+
+  </div>
+
+</aura:component>

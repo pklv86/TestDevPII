@@ -1,0 +1,31 @@
+<apex:page extensions="OFSServer.Auth" standardController="OFSServer__Enviroment__c">
+      <apex:form id="dpForm">
+        <div class="bPageTitle">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="/s.gif" alt="Connected Environment" class="pageTitleIcon" title="Connected Environment"/>
+                    <h1 class="pageType">Connected Environment Edit<span class="titleSeparatingColon">:</span></h1>
+                    <h2 class="pageDescription"> New Connected Environment</h2>
+                    <div class="blank">&nbsp;</div>
+                </div>
+                <div class="links"></div>
+            </div>
+            <div class="ptBreadcrumb"></div>
+        </div>
+        <div class="bPageBlock brandSecondaryBrd bEditBlock secondaryPalette">
+            <apex:pageBlock id="pb1" title="Connected Environment Edit" mode="maindetail"> 
+                <apex:pageBlockButtons id="pbbInforemove" >
+                    <apex:commandButton id="btnEditButton" value="Save" action="{!saveEnvironment}"   />
+                    <apex:commandButton id="btnDeleteButton" value="Cancel" immediate="true"  /> 
+                </apex:pageBlockButtons>                       
+                <apex:pageBlockSection title="Information" columns="2" collapsible="false" showHeader="true" >
+                    
+                    <apex:inputField value="{!OFSServer__Enviroment__c.Name}" required="true"/>
+                    <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Auth_Type__c}" required="true" rendered="false"/>
+                    <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Type__c}" rendered="true" />
+                    <apex:inputField value="{!OFSServer__Enviroment__c.OFSServer__Authorize_Self__c}" rendered="true"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock> 
+        </div>
+    </apex:form>
+</apex:page>

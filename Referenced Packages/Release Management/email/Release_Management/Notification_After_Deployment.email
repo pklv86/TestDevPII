@@ -1,0 +1,8 @@
+Hello - Your Activity Result for Release :  {!DeploymentDetails__c.ReleaseName__c} <br/><br/>
+
+Status: {!DeploymentDetails__c.Status__c} <br/><br/>
+Message: {!DeploymentDetails__c.Error_Message__c}
+<br/>
+<br/>
+Thanks,<br/>
+Release Team

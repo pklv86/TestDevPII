@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalPicklist xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Available Channel for Notification</description>
+    <globalPicklistValues>
+        <fullName>SystemNotification</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>AdminNotification</fullName>
+        <default>true</default>
+    </globalPicklistValues>
+    <masterLabel>Channel</masterLabel>
+    <sorted>false</sorted>
+</GlobalPicklist>

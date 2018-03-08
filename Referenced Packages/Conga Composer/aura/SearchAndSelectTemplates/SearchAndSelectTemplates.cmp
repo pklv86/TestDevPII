@@ -1,0 +1,44 @@
+<aura:component extends="SearchAndSelectBase" >
+  <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+  <aura:method name="uncheckAll" action="{!c.uncheckAll}" description="Unchecks all the checkboxes" />
+  <aura:method name="reInit" action="{!c.init}" description="Runs the init method again" />
+
+  <br />
+  <div class="{! v.showItems ? 'slds-box' : ''}">
+  <div class="slds-scrollable--y slds-p-right--small" style="height: 420px;">
+    <aura:iteration items="{!v.searchedItems}" var="item">
+      
+        <div class="slds-box slds-box--small slds-theme--default" style="background-color: white; width:100%;">
+          <div class="slds-grid">
+            <div class="slds-col slds-p-right--large slds-p-left--small slds-align_absolute-center" style="width: 20%;">
+                
+                  <div style="width: 20px; height: 20px;" class="slds-checkbox_add-button">
+                    <input type="checkbox" name="chkTemplate" id="{!item.Id}" onclick="{!c.doCheckboxClick}" class="slds-assistive-text" value="on" />
+                    <label for="{!item.Id}" style="width: 20px; height: 20px;" class="slds-checkbox_faux">
+                      <span class="slds-assistive-text">Add template</span>
+                    </label>
+                  </div>
+           
+              <lightning:icon iconName="{!'doctype:' + item.APXTConga4__Template_Extension__c}" class="slds-p-left--xx-small" size="large" alternativeText="Template Type" />
+            </div>
+            <div class="slds-col slds-border--left slds-p-left--small slds-text-title slds-text-align--left"  style="width: 80%;">
+              <div class="slds-text-heading_medium slds-p-bottom--xx-small">
+              <b>{!item.APXTConga4__Name__c}</b>
+               <br />
+              <aura:if isTrue="{!and(item.APXTConga4__Template_Group__c != '', item.APXTConga4__Template_Group__c != null)}">  
+                <div class="slds-text-heading_small" style="font-weight: 500;">Group: {!item.APXTConga4__Template_Group__c}</div>
+              </aura:if>
+              </div>{!item.APXTConga4__Description__c}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <br />
+      </aura:iteration>
+
+    </div>
+  </div>
+</aura:component>

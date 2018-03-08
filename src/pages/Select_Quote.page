@@ -1,0 +1,19 @@
+<apex:page standardController="Retail_Quote__c" recordSetVar="unused" sidebar="false">
+ <apex:includeScript value="{!$Resource.UtilJS}"/> <apex:form > 
+ <apex:pageBlock > <apex:pageMessages />
+  <apex:pageBlock > Note: All modifications made on the page will be lost if Return button is clicked without clicking the Save button first. 
+  </apex:pageBlock> <apex:pageBlockButtons > 
+  <apex:commandButton value="Save" action="{!save}"/> 
+  <apex:commandButton value="Return" action="{!cancel}"/>
+   </apex:pageBlockButtons> <apex:pageBlockTable value="{!selected}" var="quo" id="table"> 
+   <apex:column headerValue="Name"> <apex:outputField value="{!quo.name}"/> </apex:column> 
+   <apex:column headerValue="Request Status"> <apex:inputField value="{!quo.Request_Status__c}"/></apex:column> 
+   <apex:column headerValue="Product"> <apex:outputField value="{!quo.Product__c}"/> </apex:column> 
+   <apex:column headerValue="Term (Whole Months)"> <apex:outputField value="{!quo.Term__c}"/> </apex:column> 
+   <apex:column headerValue="Quote Price KWH"> <apex:outputField value="{!quo.Quote_Price_KWH__c}"/> </apex:column> 
+   <apex:column headerValue="Margin"> <apex:inputField value="{!quo.Margin__c}"/> </apex:column>
+   <apex:column headerValue="select quote"> <apex:inputField value="{!quo.select_quote__c}"/> </apex:column>
+   <apex:column headerValue="Start Term"> <apex:inputField value="{!quo.Start_Term__c}"/> </apex:column>
+     </apex:pageBlockTable> </apex:pageBlock>
+      </apex:form>
+       </apex:page>

@@ -1,0 +1,68 @@
+<apex:page controller="CESEnrollmentClass">
+
+	<script type="text/javascript">
+	    var curPopupWindow = null;
+	    
+	    function closePopup()
+	    {
+	        if (curPopupWindow != null)
+	        {
+	            if (!curPopupWindow.closed)
+	            {
+	                try {
+	                    curPopupWindow.close();
+	                } catch(ex) {
+	                 // This Exception code is to deal with IE issues checking
+	                 // The window closed property
+	                }
+	            }
+	            curPopupWindow = null;
+	            self.history.go(0);
+	        }
+	    }
+	    
+	    
+	    function doFileStorage(opt)
+	    {
+	        var s = '';
+	        var u = '{!$Api.Enterprise_Server_URL_160}';
+	        var i = '';   
+	        //the application url you need request and the arguments that application needs     
+	        var q = 'http://jptky840unx.jp.fid-intl.com:16080/file?SfSID='+s+'&SfURL='+u+'&OPT='+opt+'&DocID='+i;
+	       
+	        // 1 for upload, 2 for download
+	        if (opt == 1)
+	        {
+	            var t = (screen.height - 400) / 2;
+	            var l = (screen.width - 600) / 2;
+	            // this statement is used to pop-up window
+	            curPopupWindow = window.open(q,'','height=400,width=600,top='+t+',left='+l+',toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no');
+	        }
+	        else if (opt == 2)
+	        {
+	            window.location.href = q;
+	        }
+	    }   
+	</script>
+<!-- '{!SessionId}'; {!doc.Id}
+<apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>
+                  <apex:commandButton value="Import Account" action="{!importCSVFile}"/>
+                   <apex:pageBlock >
+           <apex:pageblocktable value="{!accList}" var="acc">
+              <apex:column value="{!acc.name}" />
+              <apex:column value="{!acc.AccountNumber}" />
+              <apex:column value="{!acc.Type}" />
+              <apex:column value="{!acc.Accountsource}" />
+              <apex:column value="{!acc.Industry }" />
+        </apex:pageblocktable> -->
+    <apex:form >
+        <apex:pagemessages />
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4"> 
+            	<apex:commandButton value="Attach File" onclick="doFileStorage(1)" action="{!attachFile}"  />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:commandLink action="{!Redirect}" value="Redirect" id="theCommandLink"/>
+   		<apex:outputlink value="\\cr1nsphnas1\retail\Lodestar\Prod\EDI\Outbox\GAA"/>    
+   </apex:form>
+</apex:page>

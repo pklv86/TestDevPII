@@ -1,0 +1,25 @@
+<aura:component extends="APXTConga4:BaseModal">
+	<aura:set attribute="header" value="Choose Template Type" />
+	
+	<aura:registerEvent name="emailEvent" type="APXTConga4:SolutionEvent"/>
+	<div class="slds-grid">
+		<div class="slds-col slds-text-align--center">
+			<button class="slds-button slds-button--neutral">
+				<lightning:icon iconName="utility:file"/>
+				Files
+			</button>
+			<p class="slds-m-top--medium">
+				<span>Word, Excel, Powerpoint, PDF</span>
+			</p>
+		</div>
+		<div class="slds-col slds-text-align--center">
+				<button class="slds-button slds-button--neutral" onclick="{! c.emailTemplateClick }">
+					<lightning:icon iconName="utility:email"/>
+					Email
+				</button>
+				<p class="slds-m-top--medium">
+					<span>HTML Email body populated with data</span>
+				</p>
+		</div>
+	</div>
+</aura:component>

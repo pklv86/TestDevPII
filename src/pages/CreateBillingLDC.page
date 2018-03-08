@@ -1,0 +1,93 @@
+<apex:page controller="BillingLDC" sidebar="false">
+
+    <script type="text/javascript">
+        function toggleCheckboxes(obj,chkBoxElementID,chkValue){
+           if(obj != null) {
+                chkValue = obj.checked;
+            }
+            var inputCheckBox = document.getElementsByTagName("input");                 
+            for(var i=0; i<inputCheckBox.length; i++){                          
+                if(inputCheckBox[i].id.indexOf(chkBoxElementID)!=-1){                                     
+                    inputCheckBox[i].checked = chkValue;
+                }
+            }
+            if(chkValue){
+                addSelectId('');    
+            }
+            else{
+                removeSelectId('');
+            }
+        }
+        
+        function toggleSelection(cb,selectId){
+            if(cb.checked==true){
+                addSelectId(selectId);
+            }
+            else{
+                removeSelectId(selectId);
+            } 
+        } 
+    </script> 
+    
+    <apex:form >
+        
+        <apex:pageMessages />
+        <apex:actionFunction name="addSelectId" action="{!addSelectedId}" rerender="mainBlock">
+            <apex:param name="selectionId" value="" assignTo="{!selectionId}"/>
+        </apex:actionFunction>
+ 
+        <apex:actionFunction name="removeSelectId" action="{!removeSelectedId}" rerender="mainBlock">
+            <apex:param name="selectionId" value="" assignTo="{!selectionId}"/>
+        </apex:actionFunction>
+        
+        <apex:pageBlock title="Ldc Accounts" id="mainBlock" >
+        
+            <apex:pageBlockButtons >
+            
+                <apex:commandButton value="Group Accounts" action="{!addAccounts}" rendered="{!groupbtn}" />
+                <apex:commandButton value="UnGroup Accounts" action="{!delAccounts}" rendered="{!!groupbtn}" />
+                <apex:commandButton value="Cancel" action="{!cancel}" />
+            
+            </apex:pageBlockButtons>
+            
+            <apex:panelGrid columns="1" >
+                <apex:outputPanel style="color:#4AC;font-weight:bold;vertical-align:text-bottom">
+                    <apex:outputText style="color:#4AC;font-weight:bold;vertical-align:bottom">[{!selectedCount} records selected]</apex:outputText>
+                </apex:outputPanel>
+            </apex:panelGrid>
+            
+            <apex:pageBlockTable title="Account LDCs" value="{!lDCAccounts}" var="ldc">
+            
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="toggleCheckboxes(this,'inputId',false)" value="{!resetHeader}"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!ldc.IsSelected}" onchange="toggleSelection(this,'{!ldc.ldcAcc.Id}')" id="inputId"/>
+                </apex:column>
+                <apex:column value="{!ldc.LdcAcc.Name}"/>
+                <apex:column value="{!ldc.LdcAcc.LDC_Account_Number__c}"/>
+                <apex:column value="{!ldc.LdcAcc.Billing_Group__c}"/>
+                <apex:column value="{!ldc.LdcAcc.Contract_LDCS__r[0].contract__c}"/>
+                <apex:column value="{!ldc.LdcAcc.Contract_LDCS__r[0].Term_Start_date__c}"/>
+                <apex:column value="{!ldc.LdcAcc.Contract_LDCS__r[0].Term_stop_date__c}"/>
+                <apex:column value="{!ldc.LdcAcc.Contract_LDCS__r[0].Active__c}"/>
+                <apex:column value="{!ldc.LdcAcc.Contract_LDCS__r[0].IsSynchronized__c}"/>
+            
+            </apex:pageBlockTable>
+            
+            <apex:panelGrid columns="4">
+                <apex:outputPanel style="color:#4AC;font-weight:bold;vertical-align:text-bottom">
+                    <apex:outputText style="color:#4AC;font-weight:bold">[Showing Page {!pageNumber} of {!totalPages}]</apex:outputText>
+                </apex:outputPanel>
+                <apex:commandButton status="fetchStatus" value="<< Previous" action="{!doPrevious}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                <apex:commandButton status="fetchStatus" value=">> Next Page" action="{!doNext}" disabled="{!!hasNext}" title="Next Page"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+            
+        </apex:pageBlock>
+    
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,36 @@
+<aura:component controller="APXTConga4.sObjectRecordController" extends="APXTConga4:BaseStep">
+  <aura:handler name="init" action="{!c.init}" value="{!this}"/>
+  <aura:attribute name="theme" type="String" />  
+
+  <div class="slds-m-around--large">
+  <div class="slds-p-top--medium slds-p-bottom--medium">
+
+    <br />
+    <br />
+    <div class="slds-align--absolute-center slds-text-align--center slds-text-heading--medium">
+
+      You are almost done! The {!v.solutionName} has been created on your Conga Solutions tab and we have created<br />a button for you on the {!v.masterObject} Object. To use it, add the button to the page layout.
+
+    </div>
+  </div>
+<center>
+  <div class="slds-p-bottom--medium" >
+    <br />
+    <div style="align-content: center;">
+      <lightning:button label="Go to Page Layout Editor"
+      variant="brand"
+      iconPosition="left"
+     onclick="{! c.goToMasterObject }" />
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="slds-text-heading--small">
+    Not quite sure how? Let us show you. <a href="javascript:void(0);" onclick="{! c.openModal }">Watch Video</a>
+  </div>
+  <br />
+
+</center>
+</div>
+<APXTConga4:FinishVideoModal aura:id="finishVideoModal" theme="{!v.theme}" customSize="slds-modal_large" customSizeStyle="width:1138px; overflow-x: hidden;" />
+</aura:component>

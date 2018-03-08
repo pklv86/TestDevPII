@@ -1,0 +1,78 @@
+<apex:page standardController="OFSServer__Package__c" extensions="OFSServer.clsMetadata" action="{!fetchRefreshComponents}" showChat="true" sidebar="false"  id="dpRefreshPage">
+    
+    <script>        
+        
+        function checkAllSearch(cb){           
+            var num = 0;            
+            var chkInput = document.getElementById('{!$Component.dpRefreshForm.pbSearchBlock.pbSearch.pbSearchProducts.product_ChkBox1}');
+            
+            while(document.getElementById('{!$Component.dpRefreshForm.pbSearchBlock.pbSearch.pbSearchProducts}' +':'+num+':searchproduct_ChkBox') != null)
+            {
+                var inputElem = document.getElementById('{!$Component.dpRefreshForm.pbSearchBlock.pbSearch.pbSearchProducts}' +':' +num+':searchproduct_ChkBox');
+                if( chkInput.checked){
+                    inputElem.checked = true;
+                }else{              
+                    inputElem.checked = false;
+                }
+                num++;
+            }
+        }
+        
+        function checkAllSelected(cb){          
+            var num = 0;
+            var checkFlag = true;           
+            var chkInput = document.getElementById('{!$Component.dpRefreshForm.pbSearchBlock.pbSearch.pbSearchProducts.product_ChkBox1}');
+            //alert('chkInput  ' + chkInput );
+            while(document.getElementById('{!$Component.dpRefreshForm.pbSearchBlock.pbSearch.pbSearchProducts}' +':'+num+':product_ChkBox') != null)
+            {
+                var inputElem = document.getElementById('{!$Component.dpRefreshForm.pbSearchBlock.pbSearch.pbSearchProducts}' +':' +num+':product_ChkBox');
+                //alert('inputElem  ' + inputElem );
+                //alert('inputElem.checked' + inputElem.checked);
+                if( ! inputElem.checked){
+                    checkFlag = false;
+                    break;
+                }
+                num++;
+            }           
+            
+            if( checkFlag ){
+                //chkInput.checked = true;
+            }else{
+                chkInput.checked = false;
+            }
+        }       
+    </script>
+    <apex:form id="dpRefreshForm">
+         <apex:pageBlock mode="detail" id="pbSearchBlock">
+            <apex:pageBlockButtons id="pbbInfo" location="top">
+                <apex:commandButton id="btnDeploymentSave" value="Save"  action="{!fetchMetadata}"  />
+                <apex:commandButton id="btnDeploymentCancel" value="Back" action="{!cancelPage}" />
+            </apex:pageBlockButtons>
+            <apex:outputPanel id="pnlSearch" rendered="{!lstRefreshComponents.size > 0}" >
+                <apex:pageBlock mode="detail" id="pbSearch" >               
+                    <apex:outputPanel id="serchresults">
+                        <apex:pageBlockTable id="pbSearchProducts" value="{!lstRefreshComponents}" var="l"  rendered="{!lstRefreshComponents.size > 0}">
+                            <apex:column width="20%">
+                                <apex:facet name="header">
+                                    <apex:outputPanel >
+                                        <apex:inputCheckbox value="{!l.selected}" id="product_ChkBox1"  onclick="checkAllSearch(this)" />
+                                        <apex:outputText value="  Check All" />
+                                    </apex:outputPanel>
+                                </apex:facet>
+                                <apex:inputCheckbox value="{!l.selected}" id="searchproduct_ChkBox" onclick="checkAllSelected(this)" />
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:outputPanel >
+                                        <apex:outputText value="Name" />
+                                    </apex:outputPanel>
+                                </apex:facet>
+                                <apex:outputText value="{!l.objRefreshDataName}" />
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:outputPanel>                 
+                </apex:pageBlock> 
+            </apex:outputPanel> 
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

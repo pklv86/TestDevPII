@@ -1,0 +1,83 @@
+<apex:page controller="CreateMultipleOptyLDC">
+ 
+    <script type="text/javascript">
+        function toggleCheckboxes(obj,chkBoxElementID,chkValue){
+           if(obj != null) {
+                chkValue = obj.checked;
+            }
+            var inputCheckBox = document.getElementsByTagName("input");                 
+            for(var i=0; i<inputCheckBox.length; i++){                          
+                if(inputCheckBox[i].id.indexOf(chkBoxElementID)!=-1){                                     
+                    inputCheckBox[i].checked = chkValue;
+                }
+            }
+            if(chkValue){
+                addSelectId('');    
+            }
+            else{
+                removeSelectId('');
+            }
+        }
+        
+        function toggleSelection(cb,selectId){
+            if(cb.checked==true){
+                addSelectId(selectId);
+            }
+            else{
+                removeSelectId(selectId);
+            } 
+        } 
+    </script> 
+    
+    <apex:form >
+        <apex:pageMessages />
+        <apex:actionFunction name="addSelectId" action="{!addSelectedId}" rerender="mainBlock">
+            <apex:param name="selectionId" value="" assignTo="{!selectionId}"/>
+        </apex:actionFunction>
+ 
+        <apex:actionFunction name="removeSelectId" action="{!removeSelectedId}" rerender="mainBlock">
+            <apex:param name="selectionId" value="" assignTo="{!selectionId}"/>
+        </apex:actionFunction>
+ 
+        <apex:pageBlock title="Available LDC Accounts to add" id="mainBlock">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:panelGrid columns="1">
+                <apex:outputPanel style="color:#4AC;font-weight:bold;vertical-align:text-bottom">
+                    <apex:outputText style="color:#4AC;font-weight:bold;vertical-align:bottom">[{!selectedCount} records selected]</apex:outputText>
+                </apex:outputPanel>
+            </apex:panelGrid>
+            <apex:pageBlockTable title="Account LDCs" value="{!lDCAccounts}" var="la">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="toggleCheckboxes(this,'inputId',false)" value="{!resetHeader}"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!la.IsSelected}" onchange="toggleSelection(this,'{!la.ldcAcc.Id}')" id="inputId"/>
+                </apex:column>
+                <!-- <apex:column >
+                    <apex:facet name="header">Action</apex:facet>
+                    <apex:inputCheckbox value="{!la.IsSelected}" onchange="toggleSelection(this,'{!la.ldcAcc.Id}')"/>
+                </apex:column> -->
+                <apex:column value="{!la.ldcAcc.Name}"/>
+                <apex:column value="{!la.ldcAcc.Alias_Name__c}"/>
+                <apex:column value="{!la.ldcAcc.LDC_Account_Number__c}"/>
+                <apex:column value="{!la.ldcAcc.Service_Territory__c}"/>                
+            </apex:pageBlockTable>
+            <apex:panelGrid columns="4">
+                <apex:outputPanel style="color:#4AC;font-weight:bold;vertical-align:text-bottom">
+                    <apex:outputText style="color:#4AC;font-weight:bold">[Showing Page {!pageNumber} of {!totalPages}]</apex:outputText>
+                </apex:outputPanel>
+                <apex:commandButton status="fetchStatus" value="<< Previous" action="{!doPrevious}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                <apex:commandButton status="fetchStatus" value=">> Next Page" action="{!doNext}" disabled="{!!hasNext}" title="Next Page"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+ 
+        </apex:pageBlock>
+ 
+    </apex:form>
+ 
+</apex:page>

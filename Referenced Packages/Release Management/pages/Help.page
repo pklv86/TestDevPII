@@ -1,0 +1,43 @@
+<apex:page >
+<br></br>
+<br></br>
+
+<h1 align ="Center"><font size="5" color="black">Release Management System  </font></h1>
+ <hr></hr>
+<p style="font-family:verdana;" align = "left"><font size="3" color="black"> Release Management System consist of two installation, <b>Release Management Server</b> and <b>Deployment Client</b>.  This package installs Release Management Server, which is recommended to be installed on Sandbox pro owned and managed by Release Manager.
+ Developers will install the <b><font size="3" color="brown"> Release Management Client</font></b> on the developer sandbox which will have connection to THIS environment.</font> </p>
+ 
+ <p style="font-family:verdana;" align = "left"><font size="3" color="black"><a> Click here</a> to download the client and install it in the development sandbox </font> </p>
+ <br></br>
+ <p style="font-family:verdana;"  align = "left"><font size="3" color="black">Please click the below links to understand the concept and setup of the application </font></p>
+
+ <hr></hr>
+ 
+ 
+
+ 
+ 
+<table ALIGN="center" cellspacing="20" cellpadding="2">
+
+<tr>
+<td >&nbsp;&nbsp;<a href="http://letscreate.biz/54726-2/" target="_blank"><apex:image url="{!$Resource.OFSServer__Step1}" /></a>&nbsp;&nbsp;</td>
+
+<td>&nbsp;&nbsp;<a href="http://letscreate.biz/54726-2/" target="_blank"><apex:image url="{!$Resource.OFSServer__Step2}" /></a>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<a href="http://letscreate.biz/54726-2/" target="_blank"><apex:image url="{!$Resource.OFSServer__Step3}" /></a>&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+</tr>
+<tr>
+<td>&nbsp;&nbsp;<a href="http://letscreate.biz/54726-2/" target="_blank"><apex:image url="{!$Resource.OFSServer__Step4}" /></a>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<a href="http://letscreate.biz/54726-2/" target="_blank"><apex:image url="{!$Resource.OFSServer__Step5}" /></a>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<a href="http://letscreate.biz/54726-2/" target="_blank"><apex:image url="{!$Resource.OFSServer__Step6}" /></a>&nbsp;&nbsp;</td>
+
+</tr>
+    
+</table>
+
+</apex:page>

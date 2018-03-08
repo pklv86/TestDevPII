@@ -1,0 +1,38 @@
+<apex:page standardController="Opportunity" extensions="GetExecutablePriceController" action="{!sendNewQuotes}">
+    <script type="text/javascript">
+        function toggleCheckboxes(obj,chkBoxElementID,chkValue){
+           if(obj != null) {
+                chkValue = obj.checked;
+            }
+            var inputCheckBox = document.getElementsByTagName("input");                 
+            for(var i=0; i<inputCheckBox.length; i++){                          
+                if(inputCheckBox[i].id.indexOf(chkBoxElementID)!=-1){                                     
+                    inputCheckBox[i].checked = chkValue;
+                }
+            }
+        }
+    </script>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Create" action="{!createRequest}" disabled="{!!quotesAvailable}"/>
+                <apex:commandButton value="Cancel" action="{!cancelRequest}"/>                
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!retQuoteWrapList}" var="retQuoteWrap" id="table" title="Retail Quotes">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="toggleCheckboxes(this,'inputId',false)"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!retQuoteWrap.selected}" id="inputId"/>
+                </apex:column>
+                <apex:column headerValue="Quote Number" value="{!retQuoteWrap.retQuote.Name}"/>
+                <apex:column headerValue="Request Status" value="{!retQuoteWrap.retQuote.Request_Status__c}"/>
+                <apex:column headerValue="Term" value="{!retQuoteWrap.retQuote.Term__c}"/>
+                <apex:column headerValue="Quote Price KWH" value="{!retQuoteWrap.retQuote.Quote_Price_KWH__c}"/>
+                <apex:column headerValue="Product" value="{!retQuoteWrap.retQuote.Product__c}"/>
+                <apex:column headerValue="Credit Check Required" value="{!retQuoteWrap.retQuote.Credit_Check_Required__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

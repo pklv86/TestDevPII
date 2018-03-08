@@ -1,0 +1,135 @@
+<apex:page sidebar="false" title="Send Account To Lodestar" controller="lodestarSingleAccount" readOnly="true">
+    <apex:form id="frm" >
+        <apex:pageBlock title="Account Information">
+            <apex:pageBlockSection title="please select account to send to lodestar">
+                <apex:inputField value="{!ldc.Account__c}"/>
+                <apex:inputField value="{!ldc.Account_Type_Code__c}"/>
+                    <apex:selectList value="{!selectedContract}" multiselect="false" size="1" label="Contract List" >
+                        <apex:selectOptions value="{!ContractList}"/>
+                    </apex:selectList>
+            </apex:pageBlockSection>
+            <center><apex:commandButton value="Get LDC Accounts" action="{!pickLdc}" /></center>
+            <apex:pageBlockSection title="Related Account Information" rendered="{!acc != null}">
+                <apex:outputField value="{!acc.name}"/>
+                <apex:outputField value="{!acc.Short_Code__c}"/>
+                <apex:outputField value="{!acc.Supplier__c}"/>
+                <apex:outputField value="{!acc.recordtypeId}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{!!ldcsection && acc != null}">
+                <b> No accounts to send to lodestar </b>
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+        <apex:pageBlock title="LDC Accounts to be Sent"  id="pb2" rendered="{!ldcsection && !errBlock && !sentBlock}">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Validate" action="{!ValidateToLS}" disabled="{!validateBtn}"/>
+                <apex:commandButton value="Send To Lodestar" action="{!callLodestar}" disabled="{!sendBtnDisable}"/>
+            </apex:pageBlockButtons>
+            <!-- rendered="{!contractLDCLst != null}" --> 
+            <table >
+                <tr>
+                    <th>LDC Account Number</th>
+                    <th>LDC Account Status</th>
+                    <th>Account Type Code</th>
+                    <th>Bill Cycle</th>
+                    <th>CRM ID</th>
+                    <th>Service Street</th>
+                    <th>Utility Code</th>
+                    <th>Revenue Class</th>
+                    <th>LDC Start Date</th>
+                    <th>Contract Number</th>
+                    <th>Contract Type</th>
+                    <th>Bill Method</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Term Start Date</th>
+                    <th>Term Stop Date</th>
+                    <th>Active</th>
+                    <th>Issynchronized</th>
+                    <th>Lodestar Integration Status</th>
+                    <th>Validation</th>
+                </tr>
+                <apex:repeat value="{!contractLDCLst}" var="cldc">
+                    <tr>
+                        <td>{!cldc.ldc_account__r.LDC_Account_Number__c}</td>
+                        <td>{!cldc.ldc_account__r.LDC_Account_Status__c}</td>
+                        <td>{!cldc.ldc_account__r.Account_Type_Code__c}</td>
+                        <td>{!cldc.ldc_account__r.Bill_Cycle__c}</td>
+                        <td>{!cldc.ldc_account__r.CRM_Id__c}</td>
+                        <td>{!cldc.ldc_account__r.Service_Street_1__c}</td>
+                        <td>{!cldc.ldc_account__r.ldc_vendor__r.Utility_Code__c}</td>
+                        <td>{!cldc.ldc_account__r.Revenue_Class__c}</td>
+                        <td><c:FormatTime date_value="{!cldc.ldc_account__r.LDC_Start_Date__c}"/></td>
+                        <td>{!cldc.contract__r.ContractNumber}</td>
+                        <td>{!cldc.contract__r.Contract_Type__c}</td>
+                        <td>{!cldc.contract__r.Bill_Method__c}</td>
+                        <td><c:FormatTime date_value="{!cldc.contract__r.startdate}"/></td>
+                        <td><c:FormatTime date_value="{!cldc.contract__r.End_Date__c}"/></td>
+                        <td><c:FormatTime date_Timevalue="{!cldc.Term_Start_Date__c}"/></td>
+                        <td><c:FormatTime date_Timevalue="{!cldc.Term_Stop_Date__c}"/></td>
+                        <td>{!cldc.Active__c}</td>
+                        <td>{!cldc.IsSynchronized__c}</td>
+                        <td>{!cldc.ldc_account__r.account__r.LodeStar_Integration_Status__c}</td>
+                        <td>{!cldc.ldc_account__r.account__r.Validation__c}</td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <apex:commandButton reRender="pb2" value="First" action="{!First}"  disabled="{!DisablePrevious}" title="First Page"/> 
+            <apex:commandButton reRender="pb2" value="Previous" action="{!hasPrevious}" disabled="{!DisablePrevious}" title="Previous Page"/> 
+            <apex:commandButton reRender="pb2" value="Next" action="{!hasNext}" disabled="{!DisableNext}" title="Next Page"/>
+            <apex:commandButton reRender="pb2" value="Last" action="{!Last}" disabled="{!DisableNext}" title="Last Page"/> 
+        </apex:pageBlock>
+        <apex:pageBlock title="Error Information Block" rendered="{!errBlock}">
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th width="25%">LDC Account Number</th>
+                    <th width="75%">Error Messages</th>
+                </tr>
+                <apex:repeat value="{!errldc}" var="elst">
+                    <tr>
+                        <td width="25%">{!elst}</td>
+                        <td width="75%">
+                            <apex:repeat value="{!errmap[elst]}" var="emap"><p>{!emap}</P></apex:repeat>
+                        </td>
+                    </tr>
+                </apex:repeat>                   
+            </table>
+        </apex:pageBlock>
+        <apex:pageBlock title="Accounts Sent to Lodestar" rendered="{!sentBlock}" id="pb3">
+            
+            <p> The job is <b>{!apexstatus}</b> on <b>{!JobType}</b> and its status is <b><i>{!jobstatus}</i></b>
+            
+                <table border="1">
+                    <tr>
+                        <th>LDC Account ID</th>
+                        <th>LDC Account Number</th>
+                        <th>LDC Account Status</th>
+                        <th>Contract LDC ID</th>
+                        <th>Contract LDC Term Start</th>
+                        <th>Contract LDC Term Stop</th>
+                        <th>Active</th>
+                        <th>Contract Number</th>
+                        <th>Contract Type</th>
+                        <th>Bill Method</th>
+                        <th>LodeStar Integration Status </th>
+                    </tr>
+                    <apex:repeat value="{!contractLDCLstAll}" var="cldc">
+                        <tr>
+                            <td>{!cldc.LDC_Account__c}</td>
+                            <td>{!cldc.ldc_account__r.LDC_Account_Number__c}</td>
+                            <td>{!cldc.ldc_account__r.LDC_Account_Status__c}</td>
+                            <td>{!cldc.id}</td>
+                            <td><c:FormatTime date_Timevalue="{!cldc.Term_Start_Date__c}"/></td>
+                            <td><c:FormatTime date_Timevalue="{!cldc.Term_Stop_Date__c}"/></td>
+                            <td>{!cldc.Active__c}</td>
+                            <td>{!cldc.contract__r.contractnumber}</td>
+                            <td>{!cldc.contract__r.Contract_Type__c}</td>
+                            <td>{!cldc.contract__r.Bill_Method__c}</td>
+                            <td>{!cldc.ldc_account__r.account__r.LodeStar_Integration_Status__c}</td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                <apex:actionPoller action="{!lodestarResult}" interval="5" enabled="{!apexstatus = 'Currently Running'}" reRender="pb3"/>
+            </p>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
